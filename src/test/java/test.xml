@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestLogin">
+    <test name="AutoTest">
+        <classes>
+            <class name="tests.PositiveTest">
+                    <methods>
+                        <include name="toLogIn1"/>
+                    </methods>
+            </class>
+            <class name="tests.NegativeTest">
+                <methods>
+                    <include name="toLogIn2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
