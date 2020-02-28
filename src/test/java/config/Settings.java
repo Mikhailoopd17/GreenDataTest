@@ -8,9 +8,8 @@ import java.io.File;
 import java.util.logging.Logger;
 
 public class Settings {
-    protected Logger logger; //заменить sout на логи
     protected static ChromeDriver driver;
-    protected static final String URL = "https://gdcloud.ru/release-17/auth/login";
+    public static final String URL = "https://gdcloud.ru/release-17/auth/login";
 
     @BeforeSuite
     public void setConnect() {
