@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static config.Settings.URL;
@@ -57,7 +58,7 @@ public class LoginPage {
         password.sendKeys(pas);
 
         buttonToLogin1.click();
-        System.out.printf("pushed button %s\n", buttonToLogin1.getAttribute("id"));
+        System.out.printf("Click button %s\n", buttonToLogin1.getAttribute("id"));
 
         informMessage(log, login);
         informMessage(pas, password);
@@ -67,6 +68,17 @@ public class LoginPage {
 
     public void toLoginCurrentUser(){
         buttonToLogin3.click();
+        System.out.printf("Click button %s\n", buttonToLogin3.getAttribute("id"));
+
+        errorMessage();
+    }
+
+    public void toLoginDomain(String log, String pas){
+        System.out.println("Try login to domain: -"+log+", -"+pas);
+
+        login.sendKeys(log);
+        password.sendKeys(pas);
+        buttonToLogin2.click();
         errorMessage();
     }
 
@@ -108,4 +120,6 @@ public class LoginPage {
         else
             Assert.fail("Input login text is empty");
     }
+
+
 }

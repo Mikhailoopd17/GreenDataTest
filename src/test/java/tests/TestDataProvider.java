@@ -15,14 +15,10 @@ public class TestDataProvider {
     public Object[][] testData2(){
         return new String[][]{
                 {"","K35G3U"},
-                {"null",""},
-                {"teer","K35G3U"}
-        };
-    }
-    @DataProvider
-    public Object[][] testData3(){
-        return new String[][]{
-                {"teer","K35G3U"},
+                {"tester",""},
+                {" tester","K35G3U"},
+                {"      ","K35G3U"},
+                {"tester","      "},
         };
     }
 }

@@ -2,15 +2,14 @@
 <suite name="TestLogin">
     <test name="AutoTest">
         <classes>
-            <class name="tests.PositiveTest">
+            <class name="tests.LoginTests">
                     <methods>
-                        <include name="toLogIn1"/>
+                        <include name="toLoginCorrect"/>
+                        <include name="toLoginUncorrected"/>
+                        <include name="rememberMe"/>
+                        <include name="toLoginCurrentUser"/>
+                        <include name="toLoginDomain"/>
                     </methods>
-            </class>
-            <class name="tests.NegativeTest">
-                <methods>
-                    <include name="toLogIn2"/>
-                </methods>
             </class>
         </classes>
     </test>
