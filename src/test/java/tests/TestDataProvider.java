@@ -16,9 +16,7 @@ public class TestDataProvider {
         return new String[][]{
                 {"","K35G3U"},
                 {"tester",""},
-                {" tester","K35G3U"},
-                {"      ","K35G3U"},
-                {"tester","      "},
+                {" tester","K35G3U"}
         };
     }
 }

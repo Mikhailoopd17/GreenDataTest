@@ -2,17 +2,10 @@ package config;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.*;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.io.File;
-import java.util.Iterator;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
 
 public class Settings {
     protected static ChromeDriver driver;
@@ -22,13 +15,7 @@ public class Settings {
     public void setConnect() {
         try {
             System.setProperty("webdriver.chrome.driver", new File("./src/test/resources/chromedriver.exe").getCanonicalPath());
-            //ставим опции Eager
-            ChromeOptions opt = new ChromeOptions();
-            opt.setPageLoadStrategy(PageLoadStrategy.EAGER);
-            driver = new ChromeDriver(opt);
-            //System.out.println("Driver is ready");
-            Util u = new Util();
-            u.setRootScreenshotsDir();
+            driver = new ChromeDriver();
         }
         catch (Exception e){
             System.out.println(e.getMessage());
@@ -60,7 +47,7 @@ public class Settings {
     public void close(){
         if(driver != null)
             driver.quit();
-        //System.out.println("Check suite is finished");
+        System.out.println("Check suite is finished");
     }
 
 
@@ -72,7 +59,7 @@ public class Settings {
 
     public void openNewPage(String url) {
         String script = "window.open('"+url+"')";
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        JavascriptExecutor jse = driver;
         jse.executeScript(script);
 
         String newPage =null;
@@ -86,6 +73,8 @@ public class Settings {
 
         driver.switchTo().window(newPage);
     }
+
+
 
 
 }
